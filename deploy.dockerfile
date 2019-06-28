@@ -10,4 +10,4 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 RUN chmod +x *.sh && \
     cp deletecron /etc/cron.d/ && chmod 0644 /etc/cron.d/deletecron && \
     touch /var/log/deletecron
-CMD zsh && cron
+CMD ["zsh"]

@@ -1,4 +1,5 @@
 #!/bin/zsh
+export $(cat /root/deletebackup/env.env | xargs)
 DIR_NAME=`date -d "-5 day" +%Y-%d-%m`
 
 echo -e "Syncing from azure storage."

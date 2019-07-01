@@ -9,5 +9,5 @@ RUN mkdir backup_dir
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true 
 RUN chmod +x *.sh && \
     cp deletecron /etc/cron.d/ && chmod 0644 /etc/cron.d/deletecron && \
-    touch /var/log/deletecron
+    touch /var/log/deletecron.log
 CMD ["zsh"]

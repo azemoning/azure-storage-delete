@@ -16,4 +16,4 @@ if [ -d "$DIR_NAME" ]; then
 fi
 echo -e "Deleting local backup files."
 rm -rf /root/deletebackup/backup_dir/*
-echo -e "Deleting local backup files sucessful."
+echo -e "Deleting local backup files sucessful, Exiting."

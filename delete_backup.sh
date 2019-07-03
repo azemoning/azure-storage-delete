@@ -15,4 +15,5 @@ if [ -d "$DIR_NAME" ]; then
     echo -e "No 5 days old directory, exiting."
 fi
 echo -e "Deleting local backup files."
-rm -rf backup_dir/*
+rm -rf /root/deletebackup/backup_dir/*
+echo -e "Deleting local backup files sucessful."

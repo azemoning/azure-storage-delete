@@ -3,7 +3,7 @@ export $(cat /root/deletebackup/env.env | xargs)
 DIR_NAME=`date -d "-5 day" +%Y-%d-%m`
 
 echo -e "Syncing from azure storage."
-./azcopy sync $BLOB_SAS "/root/deletebackup/backup_dir" --recursive 
+/root/deletebackup/azcopy sync $BLOB_SAS "/root/deletebackup/backup_dir" --recursive 
 echo -e "Synchronizing sucessful."
 if [ -d "$DIR_NAME" ]; then
     rm /root/deletebackup/backup_dir/$DIR_NAME/*(Om[1, -24])

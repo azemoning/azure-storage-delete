@@ -9,7 +9,7 @@ if [ -d "$DIR_NAME" ]; then
     rm /root/deletebackup/backup_dir/$DIR_NAME/*(Om[1, -24])
     echo -e "Delete sucessful."
     echo -e "Start synchronizing to azure blob storage"
-    ./azcopy sync "/root/deletebackup/backup_dir" $BLOB_SAS
+    ./azcopy sync "/root/deletebackup/backup_dir" $BLOB_SAS --recursive --delete-destination=true
     echo -e "Synchronizing finished, exiting."
     else
     echo -e "No 5 days old directory, exiting."

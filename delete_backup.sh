@@ -2,6 +2,12 @@
 export $(cat /root/deletebackup/env.env | xargs)
 DIR_NAME=`date -d "-5 day" +%Y-%d-%m`
 
+## Kill old cpulimit process before starting new cpulimit process
+pkill cpulimit
+
+## Start cpulimit process
+cpulimit -P /root/deletebackup/azcopy -l 20 -b
+
 echo -e "Syncing from azure storage."
 /root/deletebackup/azcopy sync $BLOB_SAS "/root/deletebackup/backup_dir" --recursive 
 echo -e "Synchronizing sucessful."

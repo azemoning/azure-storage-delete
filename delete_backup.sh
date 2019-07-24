@@ -15,7 +15,7 @@ if [ -d "$DIR_NAME" ]; then
     ## Pinging healthchecks to inform that deleting blob will be started.
     curl -fsS --retry 3 https://hc-ping.com/05e5688a-8e46-4357-a11b-740f6d54f4fe > /dev/null
     ## Starting delete.
-    rm /root/deletebackup/backup_dir/$DIR_NAME/*(Om[1, -24])
+    rm /root/deletebackup/backup_dir/$DIR_NAME/*(Om[1, -$DB_COUNT])
     echo -e "Delete sucessful."
     echo -e "Start synchronizing to azure blob storage"
     ./azcopy sync "/root/deletebackup/backup_dir" $BLOB_SAS --recursive --delete-destination=true
